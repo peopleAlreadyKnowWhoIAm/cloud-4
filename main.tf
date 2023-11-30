@@ -338,7 +338,7 @@ resource "google_cloud_run_v2_service" "loader" {
     }
     containers {
       ports {
-        container_port = 9000
+        container_port = 8089
       }
 
       image = "us-docker.pkg.dev/cloudrun/container/hello"
