@@ -296,7 +296,7 @@ resource "google_cloud_run_v2_service" "server" {
         container_port = 8080
       }
 
-      image = format("%s-docker.pkg.dev/%s/%s/%s/%s", var.region, var.project, google_artifact_registry_repository.image_repo.repository_id, google_cloudbuild_trigger.bt_server.github[0].name, var.server_service)
+      image = format("%s-docker.pkg.dev/%s/%s/%s/%s:latest", var.region, var.project, google_artifact_registry_repository.image_repo.repository_id, google_cloudbuild_trigger.bt_server.github[0].name, var.server_service)
       env {
         name  = "DATASOURCE_PASSWORD"
         value = google_sql_user.client.password
@@ -341,7 +341,7 @@ resource "google_cloud_run_v2_service" "loader" {
         container_port = 8089
       }
 
-      image = format("%s-docker.pkg.dev/%s/%s/%s/%s", var.region, var.project, google_artifact_registry_repository.image_repo.repository_id, google_cloudbuild_trigger.bt_loadder.github[0].name, var.loader_service)
+      image = format("%s-docker.pkg.dev/%s/%s/%s/%s:latest", var.region, var.project, google_artifact_registry_repository.image_repo.repository_id, google_cloudbuild_trigger.bt_loadder.github[0].name, var.loader_service)
 
     }
   }
