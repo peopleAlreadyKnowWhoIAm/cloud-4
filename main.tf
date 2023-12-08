@@ -165,7 +165,7 @@ resource "google_cloudbuild_trigger" "bt_server" {
 
 
 resource "google_cloudbuild_trigger" "bt_loadder" {
-  name = "bt-loader"
+  name = "triger-loader"
   github {
     owner = "peopleAlreadyKnowWhoIAm"
     name  = "cloudd-2-loader"
